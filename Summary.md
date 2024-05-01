@@ -21,37 +21,6 @@ For this project we are going to use Salary Prediction dataset available on [Kag
 
 In this research I'm going to filter out the data by male gender and removing the age groups that do not have values which I will specify underneath each section.
 
-## Coding with R 
-
-First we are going to setup the required libraries:
-
-
-```{r libs, echo = FALSE}
-library(tidyverse)
-library(dplyr)
-library(lubridate)
-library(readr)
-library(tidyr)
-library(ggplot2)
-```
-
-After that we are going to import our dataset:
-
-```{r import, echo = FALSE}
-datas <- read.csv("C:/Users/yigit/Downloads/archive (2)/Salary_Data.csv")
-datas <- datas %>% filter(Gender == "Male")
-
-avgsal <- datas %>% 
-  group_by(Age) %>% 
-  summarize(avg_salary = mean(Salary)) %>% 
-  filter(Age != 26, Age != 31, Age != 36)
-
-avgyr <- datas %>% 
-  group_by(Years.of.Experience) %>% 
-  summarize(avg_salary = mean(Salary)) %>% 
-  filter(Years.of.Experience != 6, Years.of.Experience != 8)
-```
-
 ### Male salaries by age
 
 Now we are getting into the fun stuff, below is a scatterplot listing every single salary by age:
@@ -61,6 +30,7 @@ ggplot(data = datas, aes(x = Age, y = Salary)) +
   geom_point() + 
   labs(title = "Male salaries by age") 
 ```
+![Graph 1](https://i.imgur.com/HhIgtmF.png)
 
 While we can still make comments about this graph, lets get things better for everyone.
 
@@ -74,6 +44,7 @@ ggplot(data = avgsal, aes(x = Age, y = avg_salary)) +
   geom_point(size = 3) +
   labs(title = "Average male salaries by age", x = "*Age", y = "Average Salary", caption = "*Excluding ages 26, 31, 36" )
 ```
+![Graph 2](https://i.imgur.com/68HJpDW.png)
 
 We can see that there is a remarkable rise until age 39, after age 40 we can see another rise that lasts until age 52.
 
@@ -87,6 +58,7 @@ ggplot(data = avgyr, aes(x = Years.of.Experience, y = avg_salary)) +
   geom_point(size = 3) + 
   labs(title = "Average male salaries by years in field", x = "*Years of Experience", y = "Average Salary", caption = "*Excluding years 6, 8")
 ```
+![Graph 3](https://i.imgur.com/Uy0pmUj.png)
 
 We can see a similarity between the experience graph alongside the age graph, while getting older mostly means you are getting more experience it is not always the case! Think of it like this: a 20 year old person will have 5 years of experience when 25 but a 25 year old person will have 0 years of experience in the age 25.
 
@@ -104,7 +76,7 @@ Where we can clearly see that after age 38 biggest earners are mostly managers w
 
 That is where Jasmin Jusufbegovic comes in providing us with this amazing graph:
 
-![](https://media.licdn.com/dms/image/D4D22AQFjg2ZFgQXh4w/feedshare-shrink_1280/0/1707233928359?e=1710374400&v=beta&t=rW_wZCtAAIMjL0NTd5ahrVs0qJZkNk6WExdiKooKAMw)
+![](https://media.licdn.com/dms/image/D4D22AQFjg2ZFgQXh4w/feedshare-shrink_1280/0/1707233928359?e=1714608000&v=beta&t=V1W5NYGzF7GJ1VMOK643NdgIf_wA-nBJqEwKAvJEIeY)
 
 Since mid 30s, we can see that the wages start to rise alongside the rise in marriage.
 
