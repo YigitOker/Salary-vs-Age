@@ -76,7 +76,7 @@ Where we can clearly see that after age 38 biggest earners are mostly managers w
 
 That is where Jasmin Jusufbegovic comes in providing us with this amazing graph:
 
-![](https://media.licdn.com/dms/image/D4D22AQFjg2ZFgQXh4w/feedshare-shrink_1280/0/1707233928359?e=1714608000&v=beta&t=V1W5NYGzF7GJ1VMOK643NdgIf_wA-nBJqEwKAvJEIeY)
+![](https://github.com/YigitOker/Salary-vs-Age/blob/master/marriage.jpeg)
 
 Since mid 30s, we can see that the wages start to rise alongside the rise in marriage.
 
